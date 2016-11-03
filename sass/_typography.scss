@@ -1,15 +1,63 @@
-a {
-	color: #BA209B;
-	text-decoration: none;
-	&:hover {
-		color: #D424B1;
-	}
+/* fonts */
+
+$headingFont:'Abril Fatface', cursive;
+$subheadingFont: 'Montserrat', sans-serif;
+
+/* header*/
+
+h1 {
+	font-family: $headingFont;
+	font-size:14.8rem;
+	font-weight:400;
+	letter-spacing: 0.9rem;
+	transition: all 0.3s ease;
+}
+
+h2 {
+	font-family: $headingFont;
+	font-weight:400;
+	font-size:2.6rem;
+}
+
+h3 {
+	font-family: $subheadingFont;
+	font-size: 1.3rem;
+	font-weight:400;
+	line-height:4.8rem;
+	text-transform: uppercase;
+	letter-spacing: 0.3rem;
+}
+
+h4 {
+	font-family: $subheadingFont;
+	font-size:1.5rem;
+	line-height:4rem;
+	text-transform: uppercase;
+}
+
+/*links*/
+a { 
+	color:#6F6F6F;
+	text-decoration:none;
+	cursor:pointer; 
+	font-family: $subheadingFont;
+	font-size:1.5rem;
+	line-height:4rem;
+	text-transform: uppercase;
+}
+
+a:hover {
+	text-decoration:underline;
 }
 
 /* paragraphs */
 
 p {
-	line-height: 1.5;
+	font-family:$subheadingFont;
+	line-height: 2.6rem;
+	font-weight:400;
+	font-size:1.3rem;
+	color:#707070;
 }
 
 /*blockquotes*/

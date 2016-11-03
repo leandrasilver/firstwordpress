@@ -1,6 +1,46 @@
 <footer>
+  <section class="contact">
+  	<div class="contactItem">
+  		<i></i>
+  		<p>Custom theme</p>
+  		<p> Custom theme</p>
+  	</div>
+  	<div class="contactItem">
+  		<i></i>
+  		<p>Custom theme</p>
+  		<p> Custom theme</p>
+  	</div>
+  	<div class="contactItem">
+  		<i></i>
+  		<p>Custom theme</p>
+  		<p> Custom theme</p>
+  	</div>
+  	<div class="contactItem">
+  		<i></i>
+  		<p>Custom theme</p>
+  		<p> Custom theme</p>
+  	</div> 
+  </section> <!-- /contact -->
+  <section class="footerSocial">
+  	<div class="footerSocialItem">
+  		<i class="fa fa-facebook" aria-hidden="true"></i>
+  		<h4>Facebook</h4>
+  	</div>
+  	<div class="footerSocialItem">
+  		<i class="fa fa-facebook" aria-hidden="true"></i>
+  		<h4>Facebook</h4>
+  	</div>
+  	<div class="footerSocialItem">
+  		<i class="fa fa-facebook" aria-hidden="true"></i>
+  		<h4>Facebook</h4>
+  	</div>
+  	<div class="footerSocialItem">
+  		<i class="fa fa-facebook" aria-hidden="true"></i>
+  		<h4>Facebook</h4>
+  	</div>
+  </section>
   <div class="container">
-    <p>&copy; HackerYou <?php echo date('Y'); ?></p>
+    <p>&copy; Copyright <?php echo date('Y'); ?> Kala. Designed by Kalanidhi Themes</p>
   </div>
 </footer>
 

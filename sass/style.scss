@@ -1,23 +1,32 @@
 /*!
 * Theme Name: HackerYou Starter Theme
 * Theme URI: http://hackeryou.com;
-* Description: Starter theme for building any website. Created by HackerYou. * Rename this to your own theme page.
+* Description: Theme from folio.
 * Version: 1.0
-* Author: HackerYou
-* Author URI: http://hackeryou.com
+* Author: Leandra Silver
+* Author URI: www.leandrasilver.com
 */
-
 @import 'normalize';
 @import 'typography';
 @import 'navigation';
 @import 'sidebar';
 @import 'comments';
 @import 'footer';
+@import 'breakpoints';
 /*
 ====================================
 Default Styling
 ====================================
 */
+
+html {
+	font-size:10px;
+}
+
+body {
+	color: white;
+	text-align:center;
+}
 
 img {
 	max-width: 100%;
@@ -42,6 +51,83 @@ body {
 	width: 100%;
 }
 
+header {
+	width:100%;
+	background-position: center;
+	background-size: cover;
+	color:white;
+	display:flex;
+	height:100vh;
+	align-items:center;
+	justify-content:center;
+	h1 {
+		margin:0;
+	}
+	.headerBorderContainer {
+		width:95%;
+		height:92%;
+		margin:0 auto;
+		display:flex;
+		flex-direction:column;
+		align-items:center;
+		justify-content:center;
+		border:1px solid rgba(255,255,255,0.3);
+		position: relative;
+	}
+	a {
+		color:white;
+	}
+	.belowHeader {
+		position:relative;
+		top:-40px;
+		&::after {
+			content:"";
+			width:20px;
+			height:4px;
+			background-color:white;
+			position:absolute;
+			left:50%;
+			bottom:0;
+			transform:translateX(-50%);
+		}
+	}
+	.aboveHeader {
+		position:relative;
+		top:40px;
+	}
+	.arrowDown {
+		position: absolute;
+		bottom:-10px;
+		left:50%;
+		transform:translateX(-50%);
+	}
+	.socialHeaderContainer {
+		position: absolute;
+		left:0;
+		top:50%;
+		transform:translateY(-50%);
+		width:50px;
+		display: flex;
+		flex-direction:column;
+		// align-items:center;
+		// justify-content:center;
+		i{
+			font-size:2rem;
+		}
+		a {
+			position: relative;
+		}
+		a::before{
+			content:'';
+			height:1px;
+			width: 20px;
+			background-color: rgba(255,255,255,0.3);
+			position: absolute;
+			top:50%;
+			left:-20%;
+		}
+	}
+}
 
 
 
