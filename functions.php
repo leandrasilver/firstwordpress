@@ -74,7 +74,7 @@ function hackeryou_scripts() {
 	wp_deregister_script('jquery');
   wp_enqueue_script(
   	'jquery',
-  	"http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js",
+  	"http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js",
   	false, //dependencies
   	null, //version number
   	true //load in footer
@@ -89,9 +89,25 @@ function hackeryou_scripts() {
   );
 
   wp_enqueue_script(
+    'smooth_scroll', //handle
+    'https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/1.7.2/jquery.smooth-scroll.min.js', //source
+    false, //dependencies
+    null, // version number
+    true //load in footer
+  );
+
+  wp_enqueue_script(
+    'scroll_reveal', //handle
+    'https://unpkg.com/scrollreveal@3.3.2/dist/scrollreveal.min.js', //source
+    false, //dependencies
+    null, // version number
+    true //load in footer
+  );
+
+  wp_enqueue_script(
     'scripts', //handle
     get_template_directory_uri() . '/js/main.min.js', //source
-    array( 'jquery', 'plugins' ), //dependencies
+    array( 'jquery', 'plugins','smooth_scroll','scroll_reveal' ), //dependencies
     null, // version number
     true //load in footer
   );
@@ -290,4 +306,41 @@ function get_post_parent($post) {
 	else {
 		return $post->ID;
 	}
+}
+
+if( function_exists('acf_add_options_page') ) {
+	
+	acf_add_options_page();
+	acf_add_options_sub_page('Header');
+	acf_add_options_sub_page('Footer');
+
+	if( function_exists('acf_add_options_page') ) {
+		
+		acf_add_options_page(array(
+			'page_title' 	=> 'Theme General Settings',
+			'menu_title'	=> 'Theme Settings',
+			'menu_slug' 	=> 'theme-general-settings',
+			'capability'	=> 'edit_posts',
+			'redirect'		=> false
+		));
+		
+		acf_add_options_sub_page(array(
+			'page_title' 	=> 'Theme Header Settings',
+			'menu_title'	=> 'Header',
+			'parent_slug'	=> 'theme-general-settings',
+		));
+		
+		acf_add_options_sub_page(array(
+			'page_title' 	=> 'Theme Footer Settings',
+			'menu_title'	=> 'Footer',
+			'parent_slug'	=> 'theme-general-settings',
+		));
+	}
+	
+}
+
+function hackeryou_featured_image_url($currentPost) {
+    $image_id = get_post_thumbnail_id($currentPost->ID);
+    $image_url = wp_get_attachment_url($image_id);
+    return $image_url;
 }

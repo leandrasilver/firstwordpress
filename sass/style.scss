@@ -6,13 +6,13 @@
 * Author: Leandra Silver
 * Author URI: www.leandrasilver.com
 */
-@import 'normalize';
-@import 'typography';
-@import 'navigation';
-@import 'sidebar';
-@import 'comments';
-@import 'footer';
-@import 'breakpoints';
+
+// colors
+
+$borderGrey: #808080;
+$borderDarkGrey: #111111;
+$paragraphGrey: #707070;
+
 /*
 ====================================
 Default Styling
@@ -24,16 +24,12 @@ html {
 }
 
 body {
-	color: white;
 	text-align:center;
+	color: black;
 }
 
 img {
 	max-width: 100%;
-}
-
-body {
-	color: #333;
 }
 
 .container {
@@ -51,87 +47,26 @@ body {
 	width: 100%;
 }
 
-header {
-	width:100%;
-	background-position: center;
-	background-size: cover;
-	color:white;
-	display:flex;
-	height:100vh;
-	align-items:center;
-	justify-content:center;
-	h1 {
-		margin:0;
-	}
-	.headerBorderContainer {
-		width:95%;
-		height:92%;
-		margin:0 auto;
-		display:flex;
-		flex-direction:column;
-		align-items:center;
-		justify-content:center;
-		border:1px solid rgba(255,255,255,0.3);
-		position: relative;
-	}
-	a {
-		color:white;
-	}
-	.belowHeader {
-		position:relative;
-		top:-40px;
-		&::after {
-			content:"";
-			width:20px;
-			height:4px;
-			background-color:white;
-			position:absolute;
-			left:50%;
-			bottom:0;
-			transform:translateX(-50%);
-		}
-	}
-	.aboveHeader {
-		position:relative;
-		top:40px;
-	}
-	.arrowDown {
-		position: absolute;
-		bottom:-10px;
-		left:50%;
-		transform:translateX(-50%);
-	}
-	.socialHeaderContainer {
-		position: absolute;
-		left:0;
-		top:50%;
-		transform:translateY(-50%);
-		width:50px;
-		display: flex;
-		flex-direction:column;
-		// align-items:center;
-		// justify-content:center;
-		i{
-			font-size:2rem;
-		}
-		a {
-			position: relative;
-		}
-		a::before{
-			content:'';
-			height:1px;
-			width: 20px;
-			background-color: rgba(255,255,255,0.3);
-			position: absolute;
-			top:50%;
-			left:-20%;
-		}
-	}
+main section:not(.pageBreak) {
+	padding:50px;
 }
 
+button {
+	border-radius:30px;
+	background-color: transparent;
+	padding: 0 30px;
+}
 
+// imports
 
-
-
-
-
+@import 'normalize';
+@import 'typography';
+@import 'header';
+@import 'homePage';
+@import 'aboutPage';
+@import 'blog';
+@import 'navigation';
+@import 'sidebar';
+@import 'comments';
+@import 'footer';
+@import 'breakpoints';

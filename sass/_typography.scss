@@ -37,17 +37,14 @@ h4 {
 
 /*links*/
 a { 
-	color:#6F6F6F;
+	color:white;
 	text-decoration:none;
 	cursor:pointer; 
 	font-family: $subheadingFont;
 	font-size:1.5rem;
 	line-height:4rem;
 	text-transform: uppercase;
-}
-
-a:hover {
-	text-decoration:underline;
+	transition:0.4s all ease;
 }
 
 /* paragraphs */
@@ -57,7 +54,7 @@ p {
 	line-height: 2.6rem;
 	font-weight:400;
 	font-size:1.3rem;
-	color:#707070;
+	color:$paragraphGrey;
 }
 
 /*blockquotes*/
